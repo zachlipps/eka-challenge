@@ -1,0 +1,42 @@
+{
+  "name": "eka-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "8.3",
+    "npm": "5.3"
+  },
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachlipps/eka-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachlipps/eka-challenge/issues"
+  },
+  "homepage": "https://github.com/zachlipps/eka-challenge#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "path": "^0.12.7",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-router": "^4.2.0",
+    "webpack": "^3.8.1",
+    "body-parser": "^1.18.2",
+    "bookshelf": "^0.10.4",
+    "consolidate": "^0.15.0",
+    "express": "^4.15.4",
+    "knex": "^0.14.0",
+    "pg": "^7.4.0"
+  }
+}
