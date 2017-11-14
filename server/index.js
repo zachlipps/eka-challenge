@@ -25,13 +25,41 @@ app.use(express.static('client'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
-  new User({
-    username: 'guy',
-    password: 'guy1',
-    zip: 94034
-  }).save();
-  res.send({ hello: 'boddd' });
+app.post('/oboarding', (req, res) => {
+  const {
+    sessionID,
+    username,
+    password,
+    phone,
+    firstName,
+    lastName
+  } = req.body;
+
+  new User({ id: sessionID }).then(function(model) {
+    if (model === null) {
+      new User({
+        username,
+        password,
+        phone,
+        firstName,
+        lastName
+      }).save();
+    } else {
+      model
+        .set({
+          username,
+          password,
+          phone,
+          firstName,
+          lastName
+        })
+        .save()
+        .then(model => {
+          res.send({ id: model.sessionID });
+        });
+    }
+  });
+  res.send({ sessionID });
 });
 
 const PORT = process.env.PORT || 3001;
