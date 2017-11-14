@@ -20,7 +20,7 @@ var bookshelf = require('bookshelf')(knex);
 
 let User = bookshelf.Model.extend({ tableName: 'users' });
 
-app.use('/bundles', express.static(path.join(__dirname, 'src/public')));
+app.use(express.static('client'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
